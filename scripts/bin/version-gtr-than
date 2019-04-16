@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+from sys import argv
+from distutils.version import StrictVersion
+
+lower_version_string = argv[1]
+higher_version_string = argv[2]
+
+is_valid = StrictVersion(lower_version_string) < StrictVersion(higher_version_string)
+
+if is_valid:
+    print("Version {} OK".format(higher_version_string))
+else:
+    print("Version {} is incompatible with {}".format(higher_version_string, lower_version_string))
+    exit(1)

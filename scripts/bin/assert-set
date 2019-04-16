@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+for arg in "$@"
+do
+    VAR=$(echo \$$arg | envsubst)
+    if [ -z "$VAR" ]; then
+        echo "Environment variable '$arg' not set."
+        exit 1
+    else
+        echo "Environment variable '$arg' is set."
+    fi
+done
