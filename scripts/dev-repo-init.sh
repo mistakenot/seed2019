@@ -8,5 +8,5 @@ if [ -f ./.env ]; then
     source ./.env
 else
     echo "# Use this file for dev environment secrets." >> ./.env
-    grep -q '.env' ./.gitignore || echo "./env" >> ./.gitignore
+    grep -q '.env' ./.gitignore || echo ".env" >> ./.gitignore
 fi
